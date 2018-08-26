@@ -1,0 +1,5 @@
+  922  find /usr/bin/ -maxdepth 1 -name '*gcc*' -print | sort -r
+  923  find /usr/bin/ -maxdepth 1 -name '*gcc*' -print | sort -r > ex1.txt
+  924  history
+  925  history | tail
+  926  history | tail -n5 > ex2.txt

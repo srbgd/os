@@ -65,7 +65,12 @@ int main(){
 	for(;;){
 		fputs("$ ", stdout);
 		fgets(buf, BUFFER_SIZE, stdin);
-		exec(split(strip(buf)));
+		char** args = split(strip(buf));
+		exec(args);
+		for(char** str = args; *str; str++){
+			free(*str);
+		}
+		free(args);
 	}
 	return 0;
 }

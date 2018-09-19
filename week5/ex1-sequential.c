@@ -26,5 +26,5 @@ int main(){
 		create_thread(i);
 		printf("I have created thread number %d\n", i);
 	};
-	exit(EXIT_SUCCESS); /* this is not success because some threads still can be running */
+	exit(EXIT_SUCCESS);
 };

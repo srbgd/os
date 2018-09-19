@@ -27,7 +27,7 @@ void wakeup(int* flag){
 void* producer_thread(void* arg){
 	int value;
 	while(1){
-		value = 1; /* it would be better to receive this value from user but the statemant of the exercise reccomends to avoid any IO actions */
+		value = 1; /* it would be better to receive this value from user but the statemant of the exercise recommends to avoid any IO actions */
 		if(current == BUFFER_SIZE){
 			suspend(&producer_thread_sleeps);
 		};
@@ -45,7 +45,7 @@ void* consumer_thread(void* arg){
 		if(!current){
 			suspend(&consumer_thread_sleeps);
 		};
-		value = buf[current--]; /* it would be better to print this value but the statemant of the exercise reccomends to avoid any IO actions */
+		value = buf[current--]; /* it would be better to print this value but the statemant of the exercise recommends to avoid any IO actions */
 		if(current == BUFFER_SIZE - 1){
 			wakeup(&producer_thread_sleeps);
 		};
@@ -60,7 +60,7 @@ void* observer_thread(void* arg){
 			puts("Race condition happend!");
 			return NULL;
 		}
-		sleep(1); /* the statement of the ecercise recommends to sleep for a minute but this is not confortable to wait the whole minute */
+		sleep(1); /* the statement of the exercise recommends to sleep for a minute but this is not confortable to wait the whole minute */
 	};
 };
 

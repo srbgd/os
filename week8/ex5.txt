@@ -1,0 +1,12 @@
+Physical addresses are used by a CPU to adress memory in RAM.
+Different physical addresses point on different parts of physical memory.
+Only a CPU being run in kernel mode is allowed to work with physical address directly.
+
+Virtual addresses are used by an OS to provide an illusion of full memory control for a process.
+But virtual adresses should be translated in physical ones by OS.
+CPU has MMU with TLB on it which allows OS to control mapping of virtual address of a process into a physical address.
+A mapping for a virtual adress may exist or may not exist.
+If a mapping doesn't exist then the memory pointed by this address was not allocated by the process or corresponting memory page is in SWAP at this moment.
+If memory pointed by a virtual address is in SWAP then OS should extract the corresponding page form SWAP and create mapping.
+The execution flow of the process doesn't metion the delay when OS extracts a page from SWAP.
+Two different virtual addresses (even within one process) can be mapped into the same physical address.

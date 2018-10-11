@@ -1,0 +1,4 @@
+Maximu addressable memory size devided by page size is equal to the maximum number of pages.
+2^16 / 2^13 = 8
+Number of entries in single level page table is limited by number of pages in virtual memory.
+Therefore 8 entries are needed for a single-level linear page table.

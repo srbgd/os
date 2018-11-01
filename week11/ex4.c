@@ -6,9 +6,6 @@
 #include <stdio.h>
 #include <fcntl.h>
 
-const char* str = "This is a nice day";
-#define LEN 18
-
 int main(){
 	int fd1 = open("ex4.txt", O_RDONLY);
 	if(fd1 == -1){

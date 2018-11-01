@@ -1,0 +1,4 @@
+By default printf uses line buffering. Therefore the first printf in both programs puts a string in the buffer.
+By default fork duplicates io buffers. Therefore the second printf flushes the buffer.
+The first program puts a string in the buffer and after the fork both processes print the string. (2 hellos printed)
+The second program puts a string in the buffer and immediately flushes it (before fork call). After the flush both processes just print a new line character. (1 hello printed)
